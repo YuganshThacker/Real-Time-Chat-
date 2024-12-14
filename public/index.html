@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Enhanced Chat App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div id="join-container" class="join-container">
+    <div class="join-box">
+      <h1>Join Chat</h1>
+      <input 
+        type="text" 
+        id="username-input" 
+        placeholder="Enter your name"
+        maxlength="20"
+      >
+      <button id="join-btn">Join Chat</button>
+    </div>
+  </div>
+
+  <div id="chat-container" class="chat-container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>Users</h2>
+        <button id="theme-toggle">🌓</button>
+      </div>
+      <ul id="users-list" class="users-list"></ul>
+    </div>
+
+    <div class="chat-main">
+      <div class="chat-header">
+        <h1>Chat Room</h1>
+      </div>
+
+      <ul id="messages-list" class="messages-list"></ul>
+
+      <div id="typing-indicator" class="typing-indicator"></div>
+
+      <div class="emoji-container" id="emoji-container"></div>
+
+      <div class="message-input-container">
+        <button id="emoji-btn" class="input-btn">
+          <i class="far fa-smile"></i>
+        </button>
+        
+        <label for="file-input" class="input-btn file-input-label">
+          <i class="fas fa-paperclip"></i>
+          <input 
+            type="file" 
+            id="file-input" 
+            style="display: none;" 
+            accept="image/*,video/*,.pdf,.doc,.docx,.txt"
+          >
+        </label>
+
+        <input 
+          type="text" 
+          id="message-input" 
+          placeholder="Type a message..."
+        >
+        
+        <button id="send-btn" class="input-btn">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
